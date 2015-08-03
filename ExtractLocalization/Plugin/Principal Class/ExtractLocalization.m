@@ -103,6 +103,9 @@ static id sharedPlugin = nil;
                 continue;
             }
             NSString *string = [line substringWithRange:matchedRangeInLine];
+            if (string.length == 0) {
+                continue;
+            }
             _extractLocationWindowController =  [[ExtractLocalizationWindowController alloc]initWithWindowNibName:@"ExtractLocalizationWindowController"];
             [_extractLocationWindowController showWindow];
             
